@@ -1,3 +1,3 @@
-module github.com/vikke/template_method
+module github.com/vikke/go-templatemethod
 
 go 1.14

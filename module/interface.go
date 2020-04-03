@@ -1,32 +1,28 @@
 package module
 
-import (
-	"log"
-)
+import "log"
 
-type Do interface {
-	in()
-	out()
-	do()
+type Mailer struct {
+
 }
 
-type Receiver struct {
+type InOutLogger interface {
+	In()
+	Out()
+}
+type InOutLoggerImpl struct {
 }
 
-func New() Receiver {
-	return Receiver{}
-}
-
-func (r *Receiver) in() {
+(l *InOutLoggerImple)In() {
 	log.Println("in")
 }
-
-func (r *Receiver) out() {
+(l *InOutLoggerImple)Out() {
 	log.Println("out")
 }
 
-func (r *Receiver) do() {
-	r.in()
-	log.Println("do")
-	r.out()
+func SendMail(mailer Mailer) {
+	impl := InOutLoggerImpl{}
+	impl.In()
+	Mailer.send()
+	imple.Out()
 }
